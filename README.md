@@ -20,6 +20,13 @@ This baseline model was built with a strict, leak-proof pipeline:
 2. **Feature Engineering:** Applied One-Hot Encoding for categorical text variables.
 3. **Data Scaling:** Implemented `StandardScaler` strictly on continuous numeric variables to prevent data leakage between train/test sets.
 4. **Model Training:** Trained a baseline Logistic Regression classifier, focusing heavily on evaluating **Recall** to ensure the maximum number of actual churning customers are caught by the model.
+5. ## 📊 Model Performance (Baseline)
+
+- Accuracy: 82.18%
+- Churn Recall: 60%
+- Precision (Churn): 69%
+⚠️ The model prioritizes overall accuracy but misses ~40% of churners.
+This highlights the need for imbalance handling and recall optimization in future versions.
 
 ## Future Enhancements (Version 2.0 Roadmap)
 While the current model establishes a strong baseline, future iterations will focus on combating the natural class imbalance of the Telco dataset:

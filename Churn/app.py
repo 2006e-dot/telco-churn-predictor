@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("logistic_model.pkl")
-scaler = joblib.load("scaler.pkl")
-expected_columns = joblib.load("model_columns.pkl")
+model = joblib.load("Churn/logistic_model.pkl")
+columns = joblib.load("Churn/model_columns.pkl")
+scaler = joblib.load("Churn/scaler.pkl")
 
 st.set_page_config(layout="wide")
 st.title("Telco Customer Churn Predictor 🔮")

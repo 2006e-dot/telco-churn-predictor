@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 model = joblib.load("Churn/logistic_model.pkl")
-columns = joblib.load("Churn/model_columns.pkl")
+expected_columns = joblib.load("Churn/model_columns.pkl")
 scaler = joblib.load("Churn/scaler.pkl")
 
 st.set_page_config(layout="wide")

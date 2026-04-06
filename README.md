@@ -1,6 +1,6 @@
 # 🔮 Telco Customer Churn Predictor
 
-**[🔴 Try the Live Web App Here!](https://telco-churn-predictor-5x966sdcevj2q8anspsbrp.streamlit.app/)**
+**[🔴 Try the Live Web App Here!](https://telco-churn-predictor-5xifrpmdaajprqoq2hadhu.streamlit.app/)**
 
 ## Overview
 This is an end-to-end Machine Learning web application designed to predict the likelihood of a customer canceling their subscription (churning). By analyzing customer demographics, account information, and subscribed services, this tool allows businesses to identify at-risk customers in real-time and take proactive steps to retain them.

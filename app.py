@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("logistic_model.pkl")
+model = joblib.load("xgb_model.pkl")
 scaler = joblib.load("scaler.pkl")
 expected_columns = joblib.load("model_columns.pkl")
 
@@ -15,7 +15,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.subheader("Demographics")
     gender = st.selectbox("Gender", ["Female", "Male"])
-    SeniorCitizen = st.selectbox("Senior Citizen?", [0, 1])
+    SeniorCitizen = st.selectbox("Senior Citizen?", ["No", "Yes"])
     Partner = st.selectbox("Partner?", ["No", "Yes"])
     Dependents = st.selectbox("Dependents?", ["No", "Yes"])
 
@@ -46,12 +46,19 @@ def yes_no(val):
     return 1 if val == "Yes" else 0
 
 if st.button("Predict Churn Risk", use_container_width=True):
+    if MonthlyCharges<20 or MonthlyCharges>120:
+        st.warning("MonthlyCharges should be between 20 and 120")
+        st.stop()
+
+    if TotalCharges<0 or TotalCharges>9000:
+        st.warning("TotalCharges unrealistic")
+        st.stop()
 
     raw_input = {
         'tenure': tenure,
         'MonthlyCharges': MonthlyCharges,
         'TotalCharges': TotalCharges,
-        'SeniorCitizen': SeniorCitizen,
+        'SeniorCitizen': yes_no(SeniorCitizen),
         'Partner': yes_no(Partner),
         'Dependents': yes_no(Dependents),
         'PhoneService': yes_no(PhoneService),

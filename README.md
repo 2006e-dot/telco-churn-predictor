@@ -91,7 +91,7 @@ Customer churn directly impacts revenue. Retaining existing customers is signifi
 
 ---
 
-## 💯 Conclusion
+##  Conclusion
 
 This project demonstrates a complete ML lifecycle:
 
